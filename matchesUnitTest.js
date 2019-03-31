@@ -1,70 +1,72 @@
-expect(false).not.toBe(true); // Prueba negativa
-comparación con ===, ejemplo: 1 === 1 1 !== '1'
+// Prueba negativa
+expect(false).not.toBe(true);
 
+//comparación con ===, ejemplo: 1 === 1 1 !== '1'
 expect(thing).toBe(realThing);
-El valor no es undefined 
 
+//El valor no es undefined 
 expect(result).toBeDefined();
-El valor actual es falso, ejemplo:0, '', false
 
+//El valor actual es falso, ejemplo:0, '', false
 expect(result).toBeFalsy();
-El valor actual es verdadero, ejemplo: 'sd', 1, true
 
+//El valor actual es verdadero, ejemplo: 'sd', 1, true
 expect(thing).toBeTruthy();
-El valor actual es mayor al esperado
 
+//El valor actual es mayor al esperado
 expect(result).toBeGreaterThan(3);
-El valor actual es mayor o igual al esperado
 
+//El valor actual es mayor o igual al esperado
 expect(result).toBeGreaterThanOrEqual(25);
-El valor actual es menor al esperado
 
+//El valor actual es menor al esperado
 expect(result).toBeLessThan(0);
-El valor actual es menor o igual al esperado
 
+//El valor actual es menor o igual al esperado
 expect(result).toBeLessThanOrEqual(123);
-El valor actual es NaN
 
+//El valor actual es NaN
 expect(thing).toBeNaN();
-El valor actual es -Infinity 
 
+//El valor actual es -Infinity 
 expect(thing).toBeNegativeInfinity();
-El valor actual es Infinity
 
+//El valor actual es Infinity
 expect(thing).toBePositiveInfinity();
-El valor actual es null 
 
+//El valor actual es null 
 expect(result).toBeNull();
-El valor actual continue una cadena. Ejemplo:
 
+//El valor actual continue una cadena. Ejemplo:
  'Hola mundo'.toContain('Hola') // true
 ['Hola', 'mundo'].toContain('Hola') // true
 expect(array).toContain(anElement); expect(string).toContain(substring);
-El valor actual es igual utilizando una comparación profunda
 
+//El valor actual es igual utilizando una comparación profunda
 expect(bigObject).toEqual({"foo": ['bar', 'baz']});
+
 El espía fue llamado
-
 expect(mySpy).toHaveBeenCalled(); expect(mySpy).not.toHaveBeenCalled();
-El espía fue llamado antes que otro
 
+//El espía fue llamado antes que otro
 expect(mySpy).toHaveBeenCalledBefore(otherSpy);
-El espía fue llamado n veces:
 
+//El espía fue llamado n veces:
 expect(mySpy).toHaveBeenCalledTimes(3);
-El espía fue llamado con los siguientes parámetros
 
+//El espía fue llamado con los siguientes parámetros
 expect(mySpy).toHaveBeenCalledWith('foo', 'bar', 2);
-Verificar si un elemento tiene una clase
 
+//Verificar si un elemento tiene una clase
 const el = document.createElement('div');
 el.className = 'foo bar baz';
 expect(el).toHaveClass('bar');
-El valor actual comparado con una expresión regular
 
+//El valor actual comparado con una expresión regular
 expect("my string").toMatch(/string$/); 
 expect("other string").toMatch("her");
-Ciclos de vida
+
+//Ciclos de vida
 describe("Component", () => {
   // Shared variables
   var foo = 0;
@@ -73,7 +75,8 @@ beforeAll(() => {})
   afterEach(() => {})
   afterAll(() => {})
 });
-Deshabilitando pruebas
+
+//Deshabilitando pruebas
 xdescribe("A spec", () => {
   it("waiting to be enable", function() {
     expect(true).toEqual(true);
@@ -87,7 +90,8 @@ describe("A spec", () => {
     expect(true).toEqual(true);
   });
 });
-Utilizando spyOn
+
+//Utilizando spyOn
 describe('A spy', () => {
   let foo,
     bar = null;
@@ -112,7 +116,8 @@ describe('A spy', () => {
     expect(foo.setBar).toHaveBeenCalledWith(456, 'another param');
   });
 });
-Crear espía cuando desconocemos si la función existe
+
+//Crear espía cuando desconocemos si la función existe
 describe("Create a 'bare' spy", () => {
   let notSure;
   beforeEach(function() {
@@ -123,7 +128,8 @@ describe("Create a 'bare' spy", () => {
     expect(notSure).toHaveBeenCalled();
   });
 });
-Creando multiples espías en un mismo objeto
+
+//Creando multiples espías en un mismo objeto
 describe("Multiple spies", () => {
   const tape;
   beforeEach(() => {
@@ -138,7 +144,8 @@ describe("Multiple spies", () => {
     expect(tape.stop).toBeDefined();
   });
 });
-Verificar una propiedad de un objeto
+
+//Verificar una propiedad de un objeto
 describe("jasmine.objectContaining", () => {
   let foo;
   beforeEach(() => {
@@ -157,7 +164,8 @@ describe("jasmine.objectContaining", () => {
     }));
   });
 });
-Verificar una propiedad dentro de un objeto pasado como parámetro a una función
+
+//Verificar una propiedad dentro de un objeto pasado como parámetro a una función
 describe('jasmine.objectContaining', () => {
   it('is useful for comparing arguments', () => {
     const callback = jasmine.createSpy('callback');
@@ -171,7 +179,8 @@ describe('jasmine.objectContaining', () => {
     );
   });
 });
-Verificar un valor dentro de un arreglo
+
+//Verificar un valor dentro de un arreglo
 describe("jasmine.arrayContaining", () => {
   let foo;
   beforeEach(function() {
@@ -182,7 +191,8 @@ describe("jasmine.arrayContaining", () => {
     expect(foo).not.toEqual(jasmine.arrayContaining([6]));
   });
 });
-Verificar un valor dentro de un arreglo pasado como parámetro a una función
+
+//Verificar un valor dentro de un arreglo pasado como parámetro a una función
 describe('jasmine.arrayContaining', () => {
   it('is useful when comparing arguments', () => {
     const callback = jasmine.createSpy('callback');
@@ -193,7 +203,8 @@ describe('jasmine.arrayContaining', () => {
      .not.toHaveBeenCalledWith(jasmine.arrayContaining([5, 2]));
   });
 });
-Usando regex para comparar comparar cadenas de texto
+
+//Usando regex para comparar comparar cadenas de texto
 describe('jasmine.stringMatching', () => {
   it("matches as a regexp", () => {
     expect({foo: 'bar'})

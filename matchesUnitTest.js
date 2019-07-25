@@ -223,3 +223,20 @@ describe('jasmine.stringMatching', () => {
     });
   });
 });
+
+//SpyOn en servicio con error
+describe('Example spyOn service', () => {
+    it('service call', () => {
+      spyOn(dummyService, 'getCost').and.returnValue(
+        throwError({
+          status: 404,
+        })
+      );
+      component.getCost();
+      expect(dummyService.getCost).toHaveBeenCalledWith({
+        type: 'REFOUND',
+        amount: 2500
+      });
+    });
+ });
+
